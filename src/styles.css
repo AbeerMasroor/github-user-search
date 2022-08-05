@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+a {
+    text-decoration: none;
+    color:black;
+  }
+
+  a:hover {
+    color:black;
+  }
+
+  .alink:hover{
+     cursor: pointer; 
+  }
+
+  .repo-title a{
+    color:#3E8ACC !important;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+
+  .error-show {
+    display: flex;
+    justify-content: center;
+  }
+
+  .langs{
+    background-color:#3E8ACC !important;
+    color:white;
+    padding: 3px;
+    margin-left:2px;
+    margin-right: 2px;
+    margin-top: 2px;
+    border-radius: 4px;
+  }

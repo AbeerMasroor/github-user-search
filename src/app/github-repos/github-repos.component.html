@@ -1,0 +1,28 @@
+<div class="container-fluid mt-5" *ngIf="githubRepos != []">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+            <div class="col-md-6 p-3" *ngFor="let Repo of githubRepos | paginate: { itemsPerPage: 10, currentPage: p , totalItems: TotalCount} ; let i = index">
+                <div class="card p-4 h-100">
+                    <h2 class="repo-title"><a href="{{Repo.html_url}}">{{Repo.name}}</a></h2>
+                    <label>{{Repo.description }}   </label>
+                   <div class="row mt-3">
+                    <div class="col-md-2 langs text-center" *ngFor="let lang of githubLanguages[i] | keyvalue">
+                        <div  *ngIf="lang != undefined">
+                            <label >{{lang.key}}</label> 
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <pagination-controls class="pagination" (pageChange)="pageChangeEvent($event)"></pagination-controls>
+   
+</div>

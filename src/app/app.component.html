@@ -1,0 +1,35 @@
+<div class="container mt-3 " style="margin-left: 0 !important ; ">
+  <div class="row" >
+      <div class="col" >
+          <div class="card" >
+              <div class="card-header bg-secondary text-white">
+                  <h3>Github User Search</h3>
+              </div>
+              <div class="card-bod">
+                  <form class="form-inline" (submit)="SearchUser()">
+                      <div class="row">
+                      <div class="col-md-4 form-group p-4">
+                          <input [(ngModel)]="githubUserQuery" name="user" type="text" class="form-control" placeholder="Github User" id="">
+                          
+                      </div>
+                      <div class="col-md-6 p-4">
+                          <input type="submit" name="submit" class="btn btn-secondary btn-sm" id="">
+                      </div>
+                  </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<app-github-profile *ngIf="githubProfile != null && caught == false" [githubProfile]="githubProfile"></app-github-profile>
+
+<div *ngIf="githubProfile != null ">
+<app-github-repos  *ngIf="githubProfile != null && caught == false" [githubProfileName]="githubProfile.login"  [TotalCount]="githubProfile.public_repos"></app-github-repos>
+</div>
+<div class="mt-3" *ngIf="caught == true ">
+  <div class="error-show">
+
+          <b style="font-size:20px;">Profile not found</b>
+  </div>
+</div>
